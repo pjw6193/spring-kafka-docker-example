@@ -14,7 +14,7 @@ services:
     depends_on: 
      - zookeeper
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: "0.0.0.0"
+      KAFKA_ADVERTISED_HOST_NAME: "localhost"
       KAFKA_ADVERTISED_PORT: 6543
       KAFKA_ZOOKEEPER_CONNECT: "zk:2181"
       KAFKA_CREATE_TOPICS: "CREATE_CUSTOMER:1:1"
