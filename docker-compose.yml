@@ -10,10 +10,11 @@ services:
     container_name: kafka
     hostname: kafka
     links: 
-     - zookeeper:zookeeper
+     - zookeeper:zk
     environment:
       KAFKA_ADVERTISED_HOST_NAME: "0.0.0.0"
       KAFKA_ADVERTISED_PORT: 60432
+      KAFKA_ZOOKEEPER_CONNECT: "zk:2181"
     ports:
      - "60432:60432"
   mongodb:
