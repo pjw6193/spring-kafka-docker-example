@@ -44,10 +44,12 @@ public class SampleController {
 		return "Spring Boot REST API using Dockers and MongoDB";
 	}
 	
-	@RequestMapping(value="patient", method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
-	public void save(@RequestBody Patient patient){
-		LoggerFactory.getLogger(SampleController.class).info("Saving patient: " + patient);
-		service.save(patient);
+	@RequestMapping(value="patient", method=RequestMethod.POST,
+			consumes=MediaType.APPLICATION_JSON_VALUE, 
+			produces=MediaType.APPLICATION_JSON_VALUE)
+	public Patient save(@RequestBody Patient patient){
+		return patient;
+		//service.save(patient);
 	}
 	
 	@RequestMapping(value="patient", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
