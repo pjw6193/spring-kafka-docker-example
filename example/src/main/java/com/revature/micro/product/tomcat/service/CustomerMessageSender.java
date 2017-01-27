@@ -38,20 +38,23 @@ public class CustomerMessageSender {
 	public void saveCustomer(Customer customer){
 		// broadcast asynchronous message to CREATE_CUSTOMER topic
 		// any listener that subscribes to CREATE_CUSTOMER will be invoked
-		ListenableFuture<SendResult<Integer, Customer>> future =
-				kafkaTemplate.send("CREATE_CUSTOMER", customer);
-		
-		// register callback function to handle the success or failure of message
-		future.addCallback(
-				new ListenableFutureCallback<SendResult<Integer, Customer>>() {
-					@Override
-					public void onFailure(Throwable e) {
-						logger.error("Kafka Producer onFailure threw exception of type: " + e.getClass());
-					}
-					@Override
-					public void onSuccess(SendResult<Integer, Customer> result) {
-						logger.info("Kafka Producer onSuccess sent message to queue");
-					}
-				});
+		ListenableFuture<SendResult<Integer, Customer>> future = null;
+		try{
+			 future = kafkaTemplate.send("CREATE_CUSTOMER", customer);
+			// register callback function to handle the success or failure of message
+			future.addCallback(
+					new ListenableFutureCallback<SendResult<Integer, Customer>>() {
+						@Override
+						public void onFailure(Throwable e) {
+							logger.error("Kafka Producer onFailure threw exception of type: " + e.getClass());
+						}
+						@Override
+						public void onSuccess(SendResult<Integer, Customer> result) {
+							logger.info("Kafka Producer onSuccess sent message to queue");
+						}
+					});
+		}catch(Exception e){
+			logger.error("Kafka Producer threw exception of type: " + e.getClass());
+		}
 	}
 }
