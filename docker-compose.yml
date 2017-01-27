@@ -7,7 +7,6 @@ services:
   web:
     container_name: patient-service
     build: build/libs
-        dockerfile: Dockerfile
     image: patient-service-image
     depends_on: # patient-datastore will be started before the patient-service
       - mongodb
