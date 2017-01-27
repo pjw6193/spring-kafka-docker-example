@@ -1,6 +1,6 @@
 #still troubleshooting this guy
-#version: '2'
-#services:
+version: '2'
+services:
 #  zookeeper:
 #    image: jplock/zookeeper:3.4.6
 #    container_name: zookeeper
@@ -35,7 +35,6 @@
       - "56789:56789"
     links:
       - mongodb
- #     - kafka
     environment:
       SPRING_DATA_MONGODB_URI: mongodb://mongodb/test
   web:
