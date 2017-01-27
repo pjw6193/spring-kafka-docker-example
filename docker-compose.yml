@@ -1,18 +1,48 @@
 version: '2'
 services:
+  zookeeper:
+    image: jplock/zookeeper:3.4.6
+    name: zookeeper
+    ports:
+      - "2182:2181"
+  kafka:
+    image: wurstmeister/kafka:0.8.2.0
+    name: kafka
+    hostname: kafka
+    links: 
+     - zookeeper:zk
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: "kafka"
+      KAFKA_ADVERTISED_PORT: 9092
+    ports:
+     - "9092:9092"
   mongodb:
     container_name: patient-datastore
     image: mongo:3.2
     command: mongod --smallfiles
-  web:
-    container_name: patient-service
-    build: build/libs
-    image: patient-service-image
-    depends_on: # patient-datastore will be started before the patient-service
+  consumer:
+    container_name: customer-service
+    build: customer/target
+    image: customer
+    depends_on: 
       - mongodb
     ports:
-      - "59876:59876"
+      - "9001:9001"
     links:
       - mongodb
+      - kafka
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb/test
+  web:
+    container_name: example-service
+    build: example/target
+    image: example
+    depends_on: 
+      - mongodb
+    ports:
+      - "80:80"
+    links:
+      - mongodb
+      - kafka
     environment:
       SPRING_DATA_MONGODB_URI: mongodb://mongodb/test

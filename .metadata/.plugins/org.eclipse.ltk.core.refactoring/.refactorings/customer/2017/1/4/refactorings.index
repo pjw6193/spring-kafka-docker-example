@@ -1,0 +1,21 @@
+1485291849916	Delete element
+1485367787789	Delete element
+1485442832241	Delete element
+1485445122995	Rename type 'CustomerDeserializer'
+1485445171654	Rename package 'com.revature.micro.customer.kafka.deserializers'
+1485445177329	Move compilation unit
+1485445237942	Move compilation unit
+1485445268805	Rename package 'com.revature.micro.customer.kafka.deserializer'
+1485445287450	Move compilation unit
+1485445290636	Move compilation unit
+1485445309084	Rename package 'com.revature.micro.customer'
+1485445438038	Rename type 'ReceiverConfig'
+1485445459499	Copy compilation unit
+1485445471974	Rename type 'CustomerMessageReceiverConfig'
+1485446622575	Delete element
+1485446626423	Delete element
+1485448182608	Copy compilation unit
+1485448200430	Copy compilation unit
+1485449822604	Copy compilation unit
+1485543979204	Delete element
+1485544203190	Move file

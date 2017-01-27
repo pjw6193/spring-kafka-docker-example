@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.revature.micro.product.tomcat.service.CustomerService"/>
+<fullyQualifiedTypeName name="com.revature.micro.product.tomcat.service.CustomerRepository"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonProperty"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="org.springframework.kafka.annotation.EnableKafka"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="org.springframework.kafka.annotation.KafkaListener"/>
+<fullyQualifiedTypeName name="org.apache.kafka.common.serialization.IntegerSerializer"/>
+<fullyQualifiedTypeName name="org.apache.kafka.common.serialization.StringSerializer"/>
+<fullyQualifiedTypeName name="org.springframework.util.concurrent.ListenableFuture"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.revature.micro.product.tomcat.service.CustomerMessageSender"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.revature.micro.product.tomcat.kafka.ArrayListCustomerSenderConfig"/>
+<fullyQualifiedTypeName name="org.springframework.kafka.support.serializer.JsonDeserializer"/>
+<fullyQualifiedTypeName name="com.revature.micro.customer.kafka.ArrayListCustomerMessageReceiverConfig"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.revature.micro.customer.kafka.deserializer.ArrayListCustomerDeserializer"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="com.revature.micro.product.tomcat.service.Customer"/>
+<fullyQualifiedTypeName name="org.springframework.kafka.support.SendResult"/>
+<fullyQualifiedTypeName name="org.apache.kafka.clients.producer.ProducerConfig"/>
+<fullyQualifiedTypeName name="org.springframework.kafka.core.KafkaTemplate"/>
+<fullyQualifiedTypeName name="org.springframework.util.concurrent.ListenableFutureCallback"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.springframework.kafka.support.ProducerListener"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,5 @@
+package com.revature.micro.patient.tomcat.mongo;
+
+public interface PatientRepository {
+
+}
