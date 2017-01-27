@@ -32,8 +32,8 @@ public class CustomerService {
 	 * @param customer
 	 * @return
 	 */
-	public Customer save(Customer customer){
-		return customerMessageSender.saveCustomer(customer);
+	public void save(Customer customer){
+		customerMessageSender.saveCustomer(customer);
 	}
 	
 	public List<Customer> findByFirstName(String firstName){

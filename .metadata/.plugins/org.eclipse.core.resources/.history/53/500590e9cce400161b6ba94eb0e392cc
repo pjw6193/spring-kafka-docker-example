@@ -1,0 +1,44 @@
+package com.revature.micro.customer.data.mongo;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Component;
+
+@Component
+public class CustomerMessageReceiver {
+
+	private CustomerRepository repository;
+
+	@Autowired
+	public void setRepository(CustomerRepository repository) {
+		this.repository = repository;
+	}
+
+	/**
+	 * This method will be invoked by Spring Integration when a message
+	 * is sent to the CREATE_CUSTOMER topic in the Kafka queue.
+	 * 
+	 * @param customer
+	 * @return
+	 */
+	@KafkaListener(topics="CREATE_CUSTOMER")
+	public <S extends Customer> S save(S customer) {
+		return repository.save(customer);
+	}
+
+	//////// Non-Kafka convenience methods ////////////
+	public List<Customer> findAll() {
+		return repository.findAll();
+	}
+
+	public List<Customer> findByFirstName(String firstName) {
+		return repository.findByFirstName(firstName);
+	}
+
+	public List<Customer> findByLastName(String lastName) {
+		return repository.findByLastName(lastName);
+	}
+	
+}

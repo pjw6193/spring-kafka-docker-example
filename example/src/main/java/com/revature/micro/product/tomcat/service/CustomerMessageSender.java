@@ -1,5 +1,7 @@
 package com.revature.micro.product.tomcat.service;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
@@ -26,12 +28,14 @@ public class CustomerMessageSender {
 		this.kafkaTemplate = kafkaTemplate;
 	}
 	
+	private static Log logger = LogFactory.getLog(CustomerMessageSender.class);
+	
 	/**
 	 * Sends customer data to Kafka 
 	 * @param customer
 	 * @return
 	 */
-	public Customer saveCustomer(Customer customer){
+	public void saveCustomer(Customer customer){
 		// broadcast asynchronous message to CREATE_CUSTOMER topic
 		// any listener that subscribes to CREATE_CUSTOMER will be invoked
 		ListenableFuture<SendResult<Integer, Customer>> future =
@@ -42,19 +46,12 @@ public class CustomerMessageSender {
 				new ListenableFutureCallback<SendResult<Integer, Customer>>() {
 					@Override
 					public void onFailure(Throwable e) {
-						System.out.println(e.getStackTrace());
+						logger.error("Kafka Producer onFailure threw exception of type: " + e.getClass());
 					}
 					@Override
 					public void onSuccess(SendResult<Integer, Customer> result) {
-						System.out.println("Success!");
+						logger.info("Kafka Producer onSuccess sent message to queue");
 					}
 				});
-		try{
-			// await the completion of the message and extract the returned value
-			return future.get().getProducerRecord().value();
-		}catch(Exception e){
-			return new Customer();
-		}
-		
 	}
 }

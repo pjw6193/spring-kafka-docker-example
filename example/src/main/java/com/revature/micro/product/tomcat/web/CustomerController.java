@@ -55,8 +55,8 @@ public class CustomerController {
 	@RequestMapping(value="/save", method=RequestMethod.POST, 
 			consumes=MediaType.APPLICATION_JSON_VALUE,
 			produces=MediaType.APPLICATION_JSON_VALUE)
-	public Customer save(@RequestBody Customer customer){
-		return service.save(customer);
+	public void save(@RequestBody Customer customer){
+		service.save(customer);
 	}
 	
 	///////////// Non-kafka convenience endpoints ////////////
