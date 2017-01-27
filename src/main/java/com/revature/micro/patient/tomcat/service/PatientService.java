@@ -7,7 +7,6 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.revature.micro.patient.tomcat.SampleTomcatApplication;
 import com.revature.micro.patient.tomcat.mongo.Patient;
 import com.revature.micro.patient.tomcat.mongo.PatientRepository;
 
@@ -15,7 +14,7 @@ import com.revature.micro.patient.tomcat.mongo.PatientRepository;
 public class PatientService {
 
 	private PatientRepository repository;
-	private static Log logger = LogFactory.getLog(SampleTomcatApplication.class);
+	private static Log logger = LogFactory.getLog(PatientService.class);
 	
 	@Autowired
 	public void setRepository(PatientRepository repository) {
@@ -23,7 +22,7 @@ public class PatientService {
 	}
 	
 	public void save(Patient patient){
-		logger.warn("Saving patient: " + patient);
+		logger.info("Saving patient: " + patient);
 		repository.save(patient);
 	}
 	

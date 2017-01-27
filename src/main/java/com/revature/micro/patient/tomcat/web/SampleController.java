@@ -45,11 +45,9 @@ public class SampleController {
 	}
 	
 	@RequestMapping(value="patient", method=RequestMethod.POST,
-			consumes=MediaType.APPLICATION_JSON_VALUE, 
-			produces=MediaType.APPLICATION_JSON_VALUE)
-	public Patient save(@RequestBody Patient patient){
-		return patient;
-		//service.save(patient);
+			consumes=MediaType.APPLICATION_JSON_VALUE)
+	public void save(@RequestBody Patient patient){
+		service.save(patient);
 	}
 	
 	@RequestMapping(value="patient", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
