@@ -54,6 +54,7 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<directory>C:\Users\Owner\micro\patient\build\libs</directory>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
