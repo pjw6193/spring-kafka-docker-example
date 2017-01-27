@@ -12,7 +12,7 @@ services:
     links: 
      - zookeeper:zookeeper
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: "kafka"
+      KAFKA_ADVERTISED_HOST_NAME: "0.0.0.0"
       KAFKA_ADVERTISED_PORT: 60432
     ports:
      - "60432:60432"
