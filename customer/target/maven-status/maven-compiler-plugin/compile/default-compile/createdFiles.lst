@@ -1,0 +1,6 @@
+com\revature\micro\customer\data\mongo\SampleMongoApplication.class
+com\revature\micro\customer\data\mongo\CustomerMessageReceiver.class
+com\revature\micro\customer\data\mongo\CustomerDeserializer.class
+com\revature\micro\customer\data\mongo\ReceiverConfig.class
+com\revature\micro\customer\data\mongo\CustomerRepository.class
+com\revature\micro\customer\data\mongo\Customer.class
