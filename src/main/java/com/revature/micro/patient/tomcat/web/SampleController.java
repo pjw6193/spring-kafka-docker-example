@@ -18,6 +18,7 @@ package com.revature.micro.patient.tomcat.web;
 
 import java.util.List;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -45,6 +46,7 @@ public class SampleController {
 	
 	@RequestMapping(value="patient", method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public void save(@RequestBody Patient patient){
+		LoggerFactory.getLogger(SampleController.class).info("Saving patient: " + patient);
 		service.save(patient);
 	}
 	
