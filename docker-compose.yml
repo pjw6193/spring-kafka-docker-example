@@ -17,7 +17,7 @@ services:
     ports:
      - "9092:9092"
   mongodb:
-    container_name: patient-datastore
+    container_name: customer-datastore
     image: mongo:3.2
     command: mongod --smallfiles
   consumer:
@@ -27,7 +27,7 @@ services:
     depends_on: 
       - mongodb
     ports:
-      - "9001:9001"
+      - "56789:56789"
     links:
       - mongodb
       - kafka
@@ -40,7 +40,7 @@ services:
     depends_on: 
       - mongodb
     ports:
-      - "80:80"
+      - "9999:9999"
     links:
       - mongodb
       - kafka
