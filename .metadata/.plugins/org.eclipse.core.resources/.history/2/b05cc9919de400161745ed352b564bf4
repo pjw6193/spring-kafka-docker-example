@@ -1,5 +1,0 @@
-package com.revature.micro.patient.tomcat.mongo;
-
-public class Patient {
-
-}

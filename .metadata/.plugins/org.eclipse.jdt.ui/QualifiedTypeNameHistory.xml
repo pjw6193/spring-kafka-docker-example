@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
 <fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonProperty"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="org.springframework.kafka.annotation.EnableKafka"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
@@ -15,8 +14,6 @@
 <fullyQualifiedTypeName name="org.apache.kafka.common.serialization.StringSerializer"/>
 <fullyQualifiedTypeName name="org.springframework.util.concurrent.ListenableFuture"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="com.revature.micro.product.tomcat.service.CustomerMessageSender"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
@@ -33,4 +30,13 @@
 <fullyQualifiedTypeName name="org.springframework.util.concurrent.ListenableFutureCallback"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.springframework.kafka.support.ProducerListener"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+<fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+<fullyQualifiedTypeName name="com.revature.micro.patient.tomcat.web.SampleController"/>
+<fullyQualifiedTypeName name="com.revature.micro.patient.tomcat.service.PatientService"/>
+<fullyQualifiedTypeName name="com.revature.micro.product.tomcat.service.CustomerMessageSender"/>
+<fullyQualifiedTypeName name="org.apache.commons.logging.Log"/>
+<fullyQualifiedTypeName name="org.apache.commons.logging.LogFactory"/>
+<fullyQualifiedTypeName name="com.revature.micro.customer.data.mongo.CustomerMessageReceiver"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

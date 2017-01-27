@@ -1,5 +1,0 @@
-package com.revature.micro.patient.tomcat.service;
-
-public class PatientService {
-
-}
