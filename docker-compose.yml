@@ -4,7 +4,7 @@ services:
     image: jplock/zookeeper:3.4.6
     container_name: zookeeper
     ports:
-      - "2182:2181"
+      - "2181:2181"
   kafka:
     image: wurstmeister/kafka:0.8.2.0
     container_name: kafka
@@ -13,9 +13,9 @@ services:
      - zookeeper:zookeeper
     environment:
       KAFKA_ADVERTISED_HOST_NAME: "kafka"
-      KAFKA_ADVERTISED_PORT: 6543
+      KAFKA_ADVERTISED_PORT: 60432
     ports:
-     - "6543:6543"
+     - "60432:60432"
   mongodb:
     container_name: customer-datastore
     image: mongo:3.2
