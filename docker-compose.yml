@@ -13,10 +13,10 @@ services:
      - zookeeper:zk
     environment:
       KAFKA_ADVERTISED_HOST_NAME: "0.0.0.0"
-      KAFKA_ADVERTISED_PORT: 60432
+      KAFKA_ADVERTISED_PORT: 6543
       KAFKA_ZOOKEEPER_CONNECT: "zk:2181"
     ports:
-     - "60432:60432"
+     - "6543:6543"
   mongodb:
     container_name: customer-datastore
     image: mongo:3.2
