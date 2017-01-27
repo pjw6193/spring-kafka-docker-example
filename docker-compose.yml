@@ -1,11 +1,10 @@
-#still troubleshooting this guy
 version: '2'
 services:
   zookeeper:
     image: jplock/zookeeper:3.4.6
     container_name: zookeeper
     ports:
-      - "2181:2181"
+     - "2181:2181"
   kafka:
     image: wurstmeister/kafka:0.8.2.0
     container_name: kafka
@@ -13,7 +12,7 @@ services:
     links: 
      - zookeeper:zk
     depends_on: 
-    - zookeeper
+     - zookeeper
    environment:
       KAFKA_ADVERTISED_HOST_NAME: "www.pjw6193.tech"
       KAFKA_ADVERTISED_PORT: 6543
