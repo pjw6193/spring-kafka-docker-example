@@ -1,25 +1,26 @@
-version: '2'
-services:
-  zookeeper:
-    image: jplock/zookeeper:3.4.6
-    container_name: zookeeper
-    ports:
-      - "2181:2181"
-  kafka:
-    image: wurstmeister/kafka:0.8.2.0
-    container_name: kafka
-    hostname: kafka
-    links: 
-     - zookeeper:zk
-    depends_on: 
-     - zookeeper
-    environment:
-      KAFKA_ADVERTISED_HOST_NAME: "localhost"
-      KAFKA_ADVERTISED_PORT: 6543
-      KAFKA_ZOOKEEPER_CONNECT: "zk:2181"
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:6543
-    ports:
-     - "6543:6543"
+#still troubleshooting this guy
+#version: '2'
+#services:
+#  zookeeper:
+#    image: jplock/zookeeper:3.4.6
+#    container_name: zookeeper
+#    ports:
+#      - "2181:2181"
+#  kafka:
+#    image: wurstmeister/kafka:0.8.2.0
+#    container_name: kafka
+#    hostname: kafka
+#    links: 
+#     - zookeeper:zk
+#    depends_on: 
+#    - zookeeper
+#   environment:
+#      KAFKA_ADVERTISED_HOST_NAME: "localhost"
+#      KAFKA_ADVERTISED_PORT: 6543
+#      KAFKA_ZOOKEEPER_CONNECT: "zk:2181"
+#      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:6543
+#    ports:
+#     - "6543:6543"
   mongodb:
     container_name: customer-datastore
     image: mongo:3.2
@@ -34,7 +35,7 @@ services:
       - "56789:56789"
     links:
       - mongodb
-      - kafka
+ #     - kafka
     environment:
       SPRING_DATA_MONGODB_URI: mongodb://mongodb/test
   web:
@@ -47,6 +48,6 @@ services:
       - "9999:9999"
     links:
       - mongodb
-      - kafka
+ #     - kafka
     environment:
       SPRING_DATA_MONGODB_URI: mongodb://mongodb/test
