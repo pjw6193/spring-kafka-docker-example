@@ -1,0 +1,18 @@
+version: '2'
+services:
+  mongodb:
+    container_name: patient-datastore
+    image: mongo:3.2
+    command: mongod --smallfiles
+  web:
+    container_name: patient-service
+    build: build/libs
+    image: patient-service-image
+    depends_on: # patient-datastore will be started before the patient-service
+      - mongodb
+    ports:
+      - "59876:59876"
+    links:
+      - mongodb
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb/test
